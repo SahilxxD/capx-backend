@@ -21,13 +21,10 @@ import com.capx.stockapp.services.impl.StockService;
 @RestController
 @CrossOrigin(origins = "*")  // Allows all origins
 public class StockController {
-    
-    private final StockServiceInterface  stockService;
 
     @Autowired
-    public StockController(StockServiceInterface stockService) {
-        this.stockService = stockService;
-    }
+    private StockService stockService;
+
     @GetMapping("/data/dashboard")
     public dashboardResponseModel getDashboardData() {
         return stockService.getDashboardData();
